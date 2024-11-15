@@ -47,6 +47,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
+    min-height: 100vh;
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -58,7 +59,6 @@ html {
  */
 body {
     margin: 0;
-    height: 100%;
 }
 
 /**
@@ -2371,8 +2371,15 @@ body:not(.has-header-image):not(.has-header-video) #scroll-to-content {
 13.3 Regular Content
 --------------------------------------------------------------*/
 .site-content-contain {
-    background-color: #fff;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.site-content-contain .site-content {
+    flex: 1;
 }
 
 .page-template-homepage-builder-bb .site-content,

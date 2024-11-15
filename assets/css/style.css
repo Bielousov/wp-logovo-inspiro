@@ -1972,7 +1972,7 @@ body {
 
 body.wp-custom-logo .headroom--not-top .custom-logo-link img {
     transition: all 0.2s ease-in-out;
-    max-height: 70px;
+    max-height: 64px;
     width: auto;
 }
 
@@ -2103,7 +2103,7 @@ body.has-header-image .custom-header-button:hover, body.has-header-video .custom
 }
 .custom-logo-link img {
     display: inline-block;
-    max-height: 80px;
+    max-height: 64px;
     width: auto;
 }
 .custom-logo-link a:hover,

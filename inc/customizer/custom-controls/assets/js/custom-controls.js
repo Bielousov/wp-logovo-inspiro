@@ -2582,43 +2582,6 @@
 	return EventRelay;
   });
 
-  S2.define('select2/translation',[
-	'jquery',
-	'require'
-  ], function ($, require) {
-	function Translation (dict) {
-	  this.dict = dict || {};
-	}
-
-	Translation.prototype.all = function () {
-	  return this.dict;
-	};
-
-	Translation.prototype.get = function (key) {
-	  return this.dict[key];
-	};
-
-	Translation.prototype.extend = function (translation) {
-	  this.dict = $.extend({}, translation.all(), this.dict);
-	};
-
-	// Static functions
-
-	Translation._cache = {};
-
-	Translation.loadPath = function (path) {
-	  if (!(path in Translation._cache)) {
-		var translations = require(path);
-
-		Translation._cache[path] = translations;
-	  }
-
-	  return new Translation(Translation._cache[path]);
-	};
-
-	return Translation;
-  });
-
   S2.define('select2/diacritics',[
 
   ], function () {
@@ -5055,7 +5018,7 @@
 			   SingleSelection, MultipleSelection, Placeholder, AllowClear,
 			   SelectionSearch, EventRelay,
 
-			   Utils, Translation, DIACRITICS,
+			   Utils, DIACRITICS,
 
 			   SelectData, ArrayData, AjaxData, Tags, Tokenizer,
 			   MinimumInputLength, MaximumInputLength, MaximumSelectionLength,
@@ -5244,67 +5207,6 @@
 		  options.selectionAdapter,
 		  EventRelay
 		);
-	  }
-
-	  if (typeof options.language === 'string') {
-		// Check if the language is specified with a region
-		if (options.language.indexOf('-') > 0) {
-		  // Extract the region information if it is included
-		  var languageParts = options.language.split('-');
-		  var baseLanguage = languageParts[0];
-
-		  options.language = [options.language, baseLanguage];
-		} else {
-		  options.language = [options.language];
-		}
-	  }
-
-	  if ($.isArray(options.language)) {
-		var languages = new Translation();
-		options.language.push('en');
-
-		var languageNames = options.language;
-
-		for (var l = 0; l < languageNames.length; l++) {
-		  var name = languageNames[l];
-		  var language = {};
-
-		  try {
-			// Try to load it with the original name
-			language = Translation.loadPath(name);
-		  } catch (e) {
-			try {
-			  // If we couldn't load it, check if it wasn't the full path
-			  name = this.defaults.amdLanguageBase + name;
-			  language = Translation.loadPath(name);
-			} catch (ex) {
-			  // The translation could not be loaded at all. Sometimes this is
-			  // because of a configuration problem, other times this can be
-			  // because of how Select2 helps load all possible translation files.
-			  if (options.debug && window.console && console.warn) {
-				console.warn(
-				  'Select2: The language file for "' + name + '" could not be ' +
-				  'automatically loaded. A fallback will be used instead.'
-				);
-			  }
-
-			  continue;
-			}
-		  }
-
-		  languages.extend(language);
-		}
-
-		options.translations = languages;
-	  } else {
-		var baseTranslation = Translation.loadPath(
-		  this.defaults.amdLanguageBase + 'en'
-		);
-		var customTranslation = new Translation(options.language);
-
-		customTranslation.extend(baseTranslation);
-
-		options.translations = customTranslation;
 	  }
 
 	  return options;

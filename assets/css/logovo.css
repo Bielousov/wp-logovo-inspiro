@@ -1,3 +1,14 @@
 .home.page .entry-header {
     display: none;
 }
+
+/* Youtube Embed */
+.epyt-video-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.epyt-gallery-img-box {
+    border-radius: 8px;
+    overflow: hidden;
+}

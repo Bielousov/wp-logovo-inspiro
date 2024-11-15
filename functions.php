@@ -171,6 +171,14 @@ function logovo_theme_support()
 }
 add_action('after_setup_theme', 'logovo_theme_support');
 
+
+/**
+ * Disable medium_large imag sizes
+ */
+add_filter('intermediate_image_sizes', function ($sizes) {
+	return array_diff($sizes, ['medium_large']);
+});
+
 /**
  * Add preconnect for Google Fonts.
  *

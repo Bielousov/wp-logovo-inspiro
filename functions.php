@@ -179,6 +179,10 @@ add_filter('intermediate_image_sizes', function ($sizes) {
 	return array_diff($sizes, ['medium_large']);
 });
 
+/* DISABLE MAX IMAGE SIZE THRESHOLD
+================================================== */
+add_filter('big_image_size_threshold', '__return_false');
+
 /**
  * Add preconnect for Google Fonts.
  *

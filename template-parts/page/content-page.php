@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying page content in page.php
  *
@@ -10,7 +11,7 @@
  * @version 1.0.0
  */
 
-$cover_height = inspiro_get_theme_mod( 'cover-size' );
+$cover_height = inspiro_get_theme_mod('cover-size');
 
 ?>
 
@@ -20,10 +21,10 @@ $cover_height = inspiro_get_theme_mod( 'cover-size' );
 	/*
 	 * If a regular page, and not the front page, show the featured image as header cover image.
 	 */
-	if ( ( is_single() || ( is_page() && ! inspiro_is_frontpage() ) ) && has_post_thumbnail( get_the_ID() ) ) {
-        echo '<div class="entry-cover-image '.$cover_height.'">';
+	if ((is_single() || (is_page() && ! inspiro_is_frontpage())) && has_post_thumbnail(get_the_ID())) {
+		echo '<div class="entry-cover-image ' . $cover_height . '">';
 		echo '<div class="single-featured-image-header">';
-		echo get_the_post_thumbnail( get_the_ID(), 'inspiro-featured-image' );
+		echo get_the_post_thumbnail(get_the_ID(), 'large');
 		echo '</div><!-- .single-featured-image-header -->';
 	}
 	?>
@@ -32,13 +33,13 @@ $cover_height = inspiro_get_theme_mod( 'cover-size' );
 
 		<?php
 
-		if ( ( is_single() || ( is_page() && ! inspiro_is_frontpage() ) ) && has_post_thumbnail( get_the_ID() ) ) {
+		if ((is_single() || (is_page() && ! inspiro_is_frontpage())) && has_post_thumbnail(get_the_ID())) {
 			echo '<div class="inner-wrap">';
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title('<h1 class="entry-title">', '</h1>');
 			echo '</div><!-- .inner-wrap -->';
 		} else {
 			echo '<div class="inner-wrap">';
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title('<h1 class="entry-title">', '</h1>');
 			echo '</div><!-- .inner-wrap -->';
 		}
 
@@ -47,21 +48,21 @@ $cover_height = inspiro_get_theme_mod( 'cover-size' );
 	</header><!-- .entry-header -->
 
 	<?php
-	if ( ( is_single() || ( is_page() && ! inspiro_is_frontpage() ) ) && has_post_thumbnail( get_the_ID() ) ) {
+	if ((is_single() || (is_page() && ! inspiro_is_frontpage())) && has_post_thumbnail(get_the_ID())) {
 		echo '</div><!-- .entry-cover-image -->';
 	}
 	?>
 
 	<div class="entry-content">
 		<?php
-			the_content();
+		the_content();
 
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'inspiro' ),
-					'after'  => '</div>',
-				)
-			);
-			?>
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . __('Pages:', 'inspiro'),
+				'after'  => '</div>',
+			)
+		);
+		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

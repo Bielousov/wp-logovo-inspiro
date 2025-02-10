@@ -91,7 +91,6 @@ if (! class_exists('Inspiro_After_Setup_Theme')) {
 			/**
 			 * Register image sizes.
 			 */
-			add_image_size('inspiro-featured-image', 2000);
 			// phpcs:disable
 			// add_image_size( 'inspiro-recent-thumbnail', 345, 192, true );
 			// add_image_size( 'inspiro-recent-thumbnail-retina', 690, 384, true );

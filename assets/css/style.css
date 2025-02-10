@@ -2545,21 +2545,13 @@ body:not(.has-header-image):not(.has-header-video) #scroll-to-content {
     list-style-type: none;
 }
 .entry-content blockquote {
-    font-size: 20px;
-    margin-top: 15px;
-    margin-bottom: 40px;
-    text-align: center;
     position: relative;
     max-width: 100%;
-    font-style: italic;
-}
-.entry-content blockquote:before, .entry-content blockquote:after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 2px;
-    margin: 50px auto;
-    background: rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    margin-bottom: 40px;
+    padding: 1em 3em;
+    text-align: center;
+    font-size: 20px;
 }
 
 .byline,

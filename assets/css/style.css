@@ -2785,11 +2785,16 @@ body > .is-root-container,
 
 .page .entry-content,
 .single .entry-content {
-    margin-bottom: 0;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 1280px;
+    margin-bottom: 0;
 }
 
 .entry-content > * {
+    width: 100%;
     max-width: calc(950px + 20px);
 }
 

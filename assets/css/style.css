@@ -2545,7 +2545,6 @@ body:not(.has-header-image):not(.has-header-video) #scroll-to-content {
 }
 .entry-content blockquote {
     position: relative;
-    max-width: 100%;
     margin-top: 15px;
     margin-bottom: 40px;
     padding: 1em 3em;

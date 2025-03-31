@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -12,45 +13,65 @@
  * @version 1.0.0
  */
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
 
+
+	<script>
+		(function(s, t, a, y, twenty, two) {
+			s.Stay22 = s.Stay22 || {};
+
+			// Just fill out your configs here
+			s.Stay22.params = {
+				aid: "logovosolutionsinc",
+			};
+
+			// Leave this part as-is;
+			twenty = t.createElement(a);
+			two = t.getElementsByTagName(a)[0];
+			twenty.async = 1;
+			twenty.src = y;
+			two.parentNode.insertBefore(twenty, two);
+		})(window, document, "script", "https://scripts.stay22.com/letmeallez.js");
+	</script>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'inspiro' ); ?></a>
+	<?php wp_body_open(); ?>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'inspiro'); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<?php get_template_part( 'template-parts/navigation/navigation', 'primary' ); ?>
-	</header><!-- #masthead -->
+		<header id="masthead" class="site-header" role="banner">
+			<?php get_template_part('template-parts/navigation/navigation', 'primary'); ?>
+		</header><!-- #masthead -->
 
-    <?php
-        $hero_show = inspiro_get_theme_mod( 'hero_enable' );
-    ?>
+		<?php
+		$hero_show = inspiro_get_theme_mod('hero_enable');
+		?>
 
-	<?php
-	// Display custom header only on first page.
+		<?php
+		// Display custom header only on first page.
 
-    if (!is_page_template( 'page-templates/homepage-no-hero.php' )) {
-    	if ( isset( $paged ) && $paged < 2 && $hero_show ) {
-    		if ( is_front_page() && is_home() ) { // Default homepage.
-    			get_template_part( 'template-parts/header/header', 'image' );
-    		} elseif ( is_front_page() ) { // static homepage.
-    			get_template_part( 'template-parts/header/header', 'image' );
-    		} elseif ( is_page() && inspiro_is_frontpage()) {
-    			get_template_part( 'template-parts/header/header', 'image' );
-    		} elseif ( is_page_template( 'page-templates/homepage-builder-bb.php' ) ) {
-    			get_template_part( 'template-parts/header/header', 'image' );
-    		}
-    	}
-    }
-	?>
+		if (!is_page_template('page-templates/homepage-no-hero.php')) {
+			if (isset($paged) && $paged < 2 && $hero_show) {
+				if (is_front_page() && is_home()) { // Default homepage.
+					get_template_part('template-parts/header/header', 'image');
+				} elseif (is_front_page()) { // static homepage.
+					get_template_part('template-parts/header/header', 'image');
+				} elseif (is_page() && inspiro_is_frontpage()) {
+					get_template_part('template-parts/header/header', 'image');
+				} elseif (is_page_template('page-templates/homepage-builder-bb.php')) {
+					get_template_part('template-parts/header/header', 'image');
+				}
+			}
+		}
+		?>
 
-	<div class="site-content-contain">
-		<div id="content" class="site-content">
+		<div class="site-content-contain">
+			<div id="content" class="site-content">

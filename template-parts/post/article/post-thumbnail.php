@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying article post thumbnail
  *
@@ -12,10 +13,10 @@
 
 ?>
 
-<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+<?php if ('' !== get_the_post_thumbnail() && ! is_single()) : ?>
 	<div class="post-thumbnail">
 		<a href="<?php the_permalink(); ?>">
-			<?php the_post_thumbnail( 'inspiro-loop' ); ?>
+			<?php the_post_thumbnail('medium'); ?>
 		</a>
 	</div><!-- .post-thumbnail -->
 <?php endif; ?>

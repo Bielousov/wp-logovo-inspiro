@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts with excerpts
  *
@@ -16,30 +17,30 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+	<?php if ('' !== get_the_post_thumbnail() && ! is_single()) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'inspiro-loop' ); ?>
+				<?php the_post_thumbnail('medium'); ?>
 			</a>
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
 	<header class="entry-header">
 		<?php
-		if ( is_front_page() && ! is_home() ) {
+		if (is_front_page() && ! is_home()) {
 
 			// The excerpt is being displayed within a front page section, so it's a lower hierarchy than h2.
-			the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
+			the_title(sprintf('<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>');
 		} else {
-			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
 		}
 		?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
+		<?php if ('post' === get_post_type()) : ?>
 			<div class="entry-meta">
 				<?php inspiro_entry_meta(); ?>
 			</div><!-- .entry-meta -->
-		<?php elseif ( 'page' === get_post_type() && get_edit_post_link() ) : ?>
+		<?php elseif ('page' === get_post_type() && get_edit_post_link()) : ?>
 			<div class="entry-meta">
 				<?php inspiro_edit_link(); ?>
 			</div><!-- .entry-meta -->

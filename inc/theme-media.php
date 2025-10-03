@@ -62,8 +62,6 @@ function inspiro_media_prevent_resize_on_upload($sizes)
 	// Removing these defaults might cause problems, so we don't
 
 	$default_sizes = array(
-		'inspiro-loop'                  => $sizes['inspiro-loop'],
-		'inspiro-loop@2x'               => $sizes['inspiro-loop@2x'],
 		'thumbnail'                     => $sizes['thumbnail'],
 		'medium'                        => $sizes['medium'],
 		'large'                         => $sizes['large']

@@ -88,17 +88,6 @@ if (! class_exists('Inspiro_After_Setup_Theme')) {
 			// Remove core block patterns.
 			remove_theme_support('core-block-patterns');
 
-			/**
-			 * Register image sizes.
-			 */
-			// phpcs:disable
-			// add_image_size( 'inspiro-recent-thumbnail', 345, 192, true );
-			// add_image_size( 'inspiro-recent-thumbnail-retina', 690, 384, true );
-			// add_image_size( 'inspiro-entry-cover', 1800 );
-			// phpcs:enable
-			add_image_size('inspiro-loop', 950, 320, true);
-			add_image_size('inspiro-loop@2x', 1900, 640, true);
-
 			// Set the default content width.
 			$GLOBALS['content_width'] = 950;
 

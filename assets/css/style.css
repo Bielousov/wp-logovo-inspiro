@@ -2170,8 +2170,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 .has-header-video.home.blog .custom-header {
     display: table;
     height: 100vh;
-    max-height: 100vh;
-    max-height: -webkit-fill-available;
+    max-height: calc(100vw*1.33);
     width: 100%;
     overflow: hidden;
 }

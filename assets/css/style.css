@@ -2793,7 +2793,7 @@ body > .is-root-container,
 }
 
 .entry-content > * {
-    width: auto;
+    width: 100%;
     max-width: calc(950px + 20px);
 }
 

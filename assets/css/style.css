@@ -1363,8 +1363,12 @@ a:hover .nav-title,
     font-size: 0;
 }
 .post-thumbnail a img {
-    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     transition: opacity 0.2s;
+    max-height: 480px;
+    overflow: hidden;
+    border-radius: 5px;
+    object-fit: cover;
 }
 .post-thumbnail a:hover img, .post-thumbnail a:focus img {
     opacity: 0.7;

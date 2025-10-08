@@ -2817,7 +2817,7 @@ body > .is-root-container,
 .page .entry-cover-image,
 .single .entry-cover-image {
     position: relative;
-    height: 450px;
+    height: max(min(450px, 100vh), 60vh);
     overflow: hidden;
 }
 .page .entry-cover-image.cover_fullscreen,
